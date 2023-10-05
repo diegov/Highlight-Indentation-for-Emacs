@@ -130,6 +130,7 @@ Known issues:
                 (setq o (make-overlay p (+ p 1))))
               (overlay-put o overlay t)
               (overlay-put o 'priority highlight-indentation-overlay-priority)
+              (overlay-put o 'display "▎")
               (overlay-put o 'face 'highlight-indentation-face))
             (forward-char)
             (setq cur-column (current-column)))
@@ -154,7 +155,7 @@ Known issues:
                     (setq show nil))
                   (setq s (cons (concat
                                  (if show
-                                     (propertize " "
+                                     (propertize "▎"
                                                  'face
                                                  'highlight-indentation-face)
                                    "")
